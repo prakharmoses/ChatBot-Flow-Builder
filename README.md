@@ -71,7 +71,7 @@ Tha app will run at: http://localhost:3000
    <ul>
      <li>The command given above are for windows.</li>
      <li>Default PORT for React is 3000, that's why the above service will run on 3000 port. It can be customized or something else if that port is already in use.
-     <li>The <strong>LIVE SERVICE</strong> can be found at 👉 [https://chatbot-flow-builder-tawny.vercel.app](https://chatbot-flow-builder-tawny.vercel.app)</li>
+     <li>The <strong>LIVE SERVICE</strong> can be found at 👉 <a href="https://chatbot-flow-builder-tawny.vercel.app">https://chatbot-flow-builder-tawny.vercel.app</a></li>
    </ul>
 
 ##  <div id="usage">🧑🏽‍💻 Usage</div>
