@@ -1,70 +1,168 @@
-# Getting Started with Create React App
+# ChatBot Flow Builder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📖 Introduction
 
-## Available Scripts
+Design and customize the logic of your chatbot without writing a single line of code!
+Chatbot Flow Builder empowers users to visually create and edit conversational flows using a drag-and-drop interface. Built on top of React and React Flow, this tool is intuitive, extensible, and production-ready.
 
-In the project directory, you can run:
+## 📝 Table of Contents
 
-### `npm start`
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Benefits](#benefits)
+4. [Getting Started](#gettingstarted)
+5. [Usage](#usage)
+6. [Architecture](#architecture)
+7. [Author](#author)
+8. [License](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## <div id="overview">📝 Overview</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Chatbot Flow Builder is a drag-and-drop based flow editor for building chatbot logic visually. It allows you to define message nodes, connect them in order, edit messages from a settings panel, and validate the flow before saving.
 
-### `npm test`
+It leverages React Flow under the hood and is architected to easily support new types of nodes, validations, and export formats.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## <div id="features">✨ Features</div>
 
-### `npm run build`
+<ul>
+  <li><strong>Drag and Drop Interface:</strong> Add new message nodes by dragging them from the Nodes Panel to the canvas.</li>
+  <li><strong>Message Nodes:</strong> Currently supports text message nodes (editable from both canvas and settings panel).</li>
+  <li><strong>Settings Panel:</strong> View and update the selected node’s properties with real-time sync.</li>
+  <li><strong>Edge Creation:</strong> Connect nodes using directional edges to define chatbot flow logic.</li>
+  <li><strong>Edge Rules:</strong> Each node's source handle can only create one outgoing edge, but can receive multiple incoming edges.</li>
+  <li><strong>Flow Validation:</strong> Before saving, the tool checks if all nodes are connected to the flow.</li>
+  <li><strong>Save Flow:</strong> Export your bot logic as a downloadable JSON file only if the graph is fully connected.</li>
+</ul>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## <div id="benefits">📈 Benefits</div>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<ul>
+  <li><strong>No-Code Bot Design:</strong> Ideal for product owners, content creators, and designers.</li>
+  <li><strong>Extensible:</strong> The system is designed to easily allow new node types (like media messages, input forms, etc.)</li>
+  <li><strong>Validation First:</strong> Prevents incomplete or disconnected flows from being saved accidentally.</li>
+  <li><strong>Clear State Management:</strong> Uses state lifting and controlled components to keep UI and data in sync.</li>
+</ul>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## <div id="gettingstarted">📲 Getting Started</div>
 
-### `npm run eject`
+Follow these steps to run the project locally on your system:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/prakharmoses/chatbot-flow-builder
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Go inside the folder and install dependencies
+    ```bash
+    cd chatbot-flow-builder
+    ```
+    ```bash
+    npm install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Start Development Server
+    ```bash
+    npm start
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Tha app will run at: http://localhost:3000
 
-## Learn More
+   <strong>Note:</strong>
+   <ul>
+     <li>The command given above are for windows.</li>
+     <li>Default PORT for React is 3000, that's why the above service will run on 3000 port. It can be customized or something else if that port is already in use.
+     <li>The <strong>LIVE SERVICE</strong> can be found: </li>
+   </ul>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##  <div id="usage">🧑🏽‍💻 Usage</div>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. <strong>Landing UI</strong>
 
-### Code Splitting
+   <ul>
+     <li>The left panel shows the Nodes Panel (available message types).</li>
+     <li>The center canvas allows node placement and connection.</li>
+     <li>The right panel displays the Settings Panel when a node is selected.</li>
+   </ul>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   The landing screen will look like as shown below.
 
-### Analyzing the Bundle Size
+   <img width="1917" height="922" alt="image" src="https://github.com/user-attachments/assets/61777be4-7e79-4b1e-a823-42b3dabf37fb" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. <strong>Add a Message Node</strong>
 
-### Making a Progressive Web App
+   Drag the "Message Node" from the left panel and drop it onto the canvas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. <strong>Connect Nodes</strong>
 
-### Advanced Configuration
+   <ul>
+     <li>Use the source handle to draw an edge to another node’s target handle.</li>
+     <li>A source handle can only have one outgoing connection.</li>
+   </ul>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. <strong>Edit Node Properties</strong>
 
-### Deployment
+   <ul>
+     <li>Select a node → Settings panel will appear on the right</li>
+     <li>Edit the message in the text area — updates are reflected live on the canvas.</li>
+   </ul>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+5. <strong>Save Flow</strong>
 
-### `npm run build` fails to minify
+   <ul>
+     <li>Click the “Save” button in the Navbar.</li>
+     <li>If any node is unconnected, an error is shown.</li>
+     <li>Otherwise, a .json file is downloaded containing the entire flow.</li>
+   </ul>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## <div id='architecture'>🏰 Architecture</div>
+
+  ### App.jsx
+  <ul>
+    <li>Root component that manages global state (nodes, edges) and handles saving logic.</li>
+  </ul>
+
+  ### 🔧 Components
+  <ul>
+    <li>
+      <strong>FlowCanvas.jsx</strong>: Main canvas area built with ReactFlow. Manages:
+      <ul>
+        <li>Drag/drop node creation</li>
+        <li>Node/edge state</li>
+        <li>Selection state</li>
+        <li>Edge constraints (only one source)</li>
+      </ul>
+    </li>
+    <li><strong>NodesPanel.jsx</strong>: Contains draggable node types. Easily extendable to support more node types.</li>
+    <li><strong>SettingsPanel.jsx</strong>: Appears when a node is selected. Reads and updates the node’s properties.</li>
+    <li><strong>MessageNode.jsx</strong>: Custom React Flow node with live-editing support via onChange. Also settings UI for MessageNode, wired to keep data in sync.</li>
+    <li><strong>Navbar.jsx</strong>: Having Save button.</li>
+    <li><strong>nodeRegistry.jsx</strong>: Keeps record of all types of nodes, their settings UI and initial data.</li>
+  </ul>
+
+  ### 📦 Data Flow
+  <ul>
+    <li>Node data is created from a centralized <em>nodeRegistry</em> definition.</li>
+    <li>
+      <em>onNodeDataChange(id, newData)</em> updates the specific node and syncs both:
+      <ul>
+        <li>Canvas (React Flow node)</li>
+        <li>Settings Panel (controlled textarea)</li>
+      </ul>
+    </li>
+    <li>Node click sets <em>selectedNode</em>, which is passed to Settings Panel.</li>
+  </ul>
+
+  ### ✅ Flow Validation (Before Saving)
+  <ul>
+    <li>Each node must be connected (i.e., no isolated node).</li>
+    <li>Directionality is ignored for validation (i.e., undirected DFS).</li>
+    <li>If valid, the flow is exported to a JSON file.</li>
+  </ul>
+
+## <div id="author">🎓 Author</div>
+
+<p>  <a href="https://github.com/prakharmosesOK"><b>Prakhar Moses</b><a/><p/>
+
+## <div id="license">📋 License</div>
+
+This repository is under no license.
