@@ -106,6 +106,9 @@ Tha app will run at: http://localhost:3000
      <li>Edit the message in the text area — updates are reflected live on the canvas.</li>
    </ul>
 
+   <img width="1918" height="927" alt="image" src="https://github.com/user-attachments/assets/93e7a157-5fb0-4d47-9d96-5a65e2534ce8" />
+
+
 5. <strong>Save Flow</strong>
 
    <ul>
